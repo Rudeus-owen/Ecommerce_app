@@ -6,7 +6,7 @@ import 'package:new_ecommerce_app/user%20site/screens/all_categories_screen.dart
 import 'package:new_ecommerce_app/user%20site/screens/messages_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/notification_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/profile_screen.dart';
-import 'package:new_ecommerce_app/user%20site/screens/tips_screen.dart';
+import 'package:new_ecommerce_app/user%20site/screens/Topic_screen.dart';
 import 'package:new_ecommerce_app/user%20site/widget/bottom_navigatior_bar.dart';
 import 'product_detail_screen.dart';
 
@@ -20,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomeContent(),
-      HomeContent(),
-    TipsScreen(),
+    HomeContent(),
+    TopicScreen(),
     NotificationScreen(),
     MessageScreen(),
     ProfileScreen(),
@@ -196,6 +196,7 @@ class _HomeContentState extends State<HomeContent> {
       label = "Products (ALL)";
       searchQuery = "";
     });
+    Navigator.push(context, MaterialPageRoute(builder: (context) => TopicScreen()));
   }
 
   void onSearchChanged(String query) {
@@ -299,7 +300,8 @@ class _HomeContentState extends State<HomeContent> {
               minHeight: 70.0,
               maxHeight: 70.0,
               child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
                 padding: const EdgeInsets.all(8.0),
                 color: const Color.fromRGBO(238, 241, 242, 1),
                 child: TextField(
@@ -324,7 +326,8 @@ class _HomeContentState extends State<HomeContent> {
                 // Categories Card
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
-                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(238, 241, 242, 1),
                     borderRadius: BorderRadius.circular(8.0),
@@ -380,8 +383,8 @@ class _HomeContentState extends State<HomeContent> {
                     filteredSubcategories.isNotEmpty)
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 0),
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(238, 241, 242, 1),
                       borderRadius: BorderRadius.circular(8.0),
@@ -416,8 +419,8 @@ class _HomeContentState extends State<HomeContent> {
                               return Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 2.0,
-                                    vertical:10.0
-                                    ), // Increase padding to make scroll area more prominent
+                                    vertical:
+                                        10.0), // Increase padding to make scroll area more prominent
                                 child: CategoryCard(
                                   categoryName: subcategory['name'],
                                   isSelected: subcategory['id'] ==
@@ -444,31 +447,33 @@ class _HomeContentState extends State<HomeContent> {
                   ),
                   child: Column(
                     children: [
-                   Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 10),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Flexible(
-        child: Container(
-          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.6),
-          child: Text(
-            label,
-            style: const TextStyle(
-                fontSize: 18, fontWeight: FontWeight.bold),
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
-      ),
-      TextButton(
-        onPressed: onShowAllSelected,
-        child: const Text('Show All'),
-      ),
-    ],
-  ),
-),
-
-
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Flexible(
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth:
+                                        MediaQuery.of(context).size.width *
+                                            0.6),
+                                child: Text(
+                                  label,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: onShowAllSelected,
+                              child: const Text('Show All'),
+                            ),
+                          ],
+                        ),
+                      ),
                       filteredProducts.isEmpty
                           ? Padding(
                               padding: const EdgeInsets.all(16.0),
@@ -656,7 +661,8 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(8.0)),
+            borderRadius:
+                const BorderRadius.vertical(top: Radius.circular(8.0)),
             child: Image.network(
               imageUrl,
               fit: BoxFit.cover,
@@ -696,7 +702,8 @@ class ProductCard extends StatelessWidget {
           ),
           if (firstVariation != null)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
