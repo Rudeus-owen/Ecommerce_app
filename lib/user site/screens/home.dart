@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:new_ecommerce_app/user%20site/screens/all_Subcategories_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/all_categories_screen.dart';
+import 'package:new_ecommerce_app/user%20site/screens/cart_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/messages_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/notification_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/profile_screen.dart';
@@ -44,6 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               // Navigate to CartScreen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CartScreen(),
+                ),
+              );
             },
           ),
         ],
