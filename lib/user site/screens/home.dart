@@ -6,7 +6,7 @@ import 'package:new_ecommerce_app/user%20site/screens/all_categories_screen.dart
 import 'package:new_ecommerce_app/user%20site/screens/messages_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/notification_screen.dart';
 import 'package:new_ecommerce_app/user%20site/screens/profile_screen.dart';
-import 'package:new_ecommerce_app/user%20site/screens/Topic_screen.dart';
+import 'package:new_ecommerce_app/user%20site/screens/explore_screen.dart';
 import 'package:new_ecommerce_app/user%20site/widget/bottom_navigatior_bar.dart';
 import 'product_detail_screen.dart';
 
@@ -20,8 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomeContent(),
-    HomeContent(),
-    TopicScreen(),
+    ExploreScreen(),
     NotificationScreen(),
     MessageScreen(),
     ProfileScreen(),
@@ -196,7 +195,6 @@ class _HomeContentState extends State<HomeContent> {
       label = "Products (ALL)";
       searchQuery = "";
     });
-    Navigator.push(context, MaterialPageRoute(builder: (context) => TopicScreen()));
   }
 
   void onSearchChanged(String query) {
