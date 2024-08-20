@@ -30,8 +30,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.message),
-          label: 'Messages',
+          icon: Icon(Icons.favorite_border_outlined),
+          label: 'Favorite',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),

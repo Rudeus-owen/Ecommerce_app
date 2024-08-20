@@ -20,10 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomeContent(),
-      HomeContent(),
     TipsScreen(),
-    NotificationScreen(),
-    MessageScreen(),
+    const NotificationScreen(),
+    const MessageScreen(),
     ProfileScreen(),
   ];
 

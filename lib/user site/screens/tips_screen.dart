@@ -4,7 +4,7 @@ class TipsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Tips Screen'),
+      child: Text('Favorite'),
     );
   }
 }
