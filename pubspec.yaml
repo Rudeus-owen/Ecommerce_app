@@ -81,6 +81,10 @@ flutter:
     - assets/images/shop2.png
     - assets/images/shop3.png
     - assets/images/shop4.png
+    - assets/images/new_arrivals.jpg
+    - assets/images/dresses.jpg
+    - assets/images/tops.jpg
+    - assets/images/jackets.jpg
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
